@@ -397,9 +397,8 @@ $(document).ready(function () {
 </div>
 <div id="sql-queries" class="section level3">
 <h3>SQL Queries</h3>
-<ul>
-<li>Find all the events that Eden Hazard was involved in 2015</li>
-</ul>
+<div id="find-all-the-events-that-eden-hazard-was-involved-in-2015" class="section level4">
+<h4>Find all the events that Eden Hazard was involved in 2015</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT id_ods, sort_order, event_text, event_type, player, player2, player_in, player_out FROM football_events</code><br />
 <code>),</code></p>
@@ -433,9 +432,9 @@ $(document).ready(function () {
 <code>WHERE 1 = 1</code><br />
 <code>GROUP BY event_type_name, season</code><br />
 <code>ORDER BY event_type_name, season ASC;</code></p>
-<ul>
-<li>Of all the events that Hazard was involved in, how many goals</li>
-</ul>
+</div>
+<div id="of-all-the-events-that-hazard-was-involved-in-how-many-goals-and-assists-was-he-involved-with" class="section level4">
+<h4>Of all the events that Hazard was involved in, how many goals and assists was he involved with</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT id_ods, sort_order, event_text, event_type, player, player2, player_in, player_out, assist_method, is_goal</code><br />
 <code>FROM football_events</code><br />
@@ -461,9 +460,9 @@ $(document).ready(function () {
 <code>and (player like '%hazard%' or player2 like '%hazard%')</code><br />
 <code>)</code></p>
 <p><code>select player_action, count(*) as occurences from final_data;</code></p>
-<ul>
-<li>Distribution of all different types of events for Chelsea in each season</li>
-</ul>
+</div>
+<div id="distribution-of-all-different-types-of-events-for-chelsea-in-each-season" class="section level4">
+<h4>Distribution of all different types of events for Chelsea in each season</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT id_ods, sort_order, event_text, event_type, player, player2, player_in, player_out, assist_method, is_goal</code><br />
 <code>FROM football_events</code><br />
@@ -499,9 +498,9 @@ $(document).ready(function () {
 <p><code>SELECT season, event_name, COUNT(*) AS occurences FROM final_data</code><br />
 <code>GROUP BY event_name, season</code><br />
 <code>ORDER BY event_name ASC, season ASC;</code></p>
-<ul>
-<li>Distribution of number of goals by league in each season that helps us find out which has been the most exciting league each season</li>
-</ul>
+</div>
+<div id="distribution-of-number-of-goals-by-league-in-each-season-that-helps-us-find-out-which-has-been-the-most-exciting-league-each-season" class="section level4">
+<h4>Distribution of number of goals by league in each season that helps us find out which has been the most exciting league each season</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT id_ods, sort_order, event_text, event_type, player, player2, player_in, player_out, assist_method, is_goal</code><br />
 <code>FROM football_events</code><br />
@@ -522,9 +521,9 @@ $(document).ready(function () {
 <p><code>SELECT league, season, COUNT(is_goal) AS goals_scored FROM final_data</code><br />
 <code>GROUP BY league, season</code><br />
 <code>ORDER BY season, league;</code></p>
-<ul>
-<li>Distribution of te different assist methods for Cesc Fabregas in the different seasons</li>
-</ul>
+</div>
+<div id="distribution-of-te-different-assist-methods-for-cesc-fabregas-in-the-different-seasons" class="section level4">
+<h4>Distribution of te different assist methods for Cesc Fabregas in the different seasons</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -548,9 +547,9 @@ $(document).ready(function () {
 <p><code>SELECT season, assist_method, COUNT(*) as occurences FROM final_data</code><br />
 <code>GROUP BY season, assist_method</code><br />
 <code>ORDER BY season ASC;</code></p>
-<ul>
-<li>Who is the best player in the world? Messi or Ronaldo. We can compare, by season, the two by looking at which body part they used to score the goals - Right Foot, Left Foot, Head</li>
-</ul>
+</div>
+<div id="who-is-the-best-player-in-the-world-messi-or-ronaldo.-we-can-compare-by-season-the-two-by-looking-at-which-body-part-they-used-to-score-the-goals---right-foot-left-foot-head" class="section level4">
+<h4>Who is the best player in the world? Messi or Ronaldo. We can compare, by season, the two by looking at which body part they used to score the goals - Right Foot, Left Foot, Head</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -575,9 +574,9 @@ $(document).ready(function () {
 <p><code>SELECT season, player, bodypart, COUNT(*) FROM final_data</code><br />
 <code>GROUP BY season, bodypart, player</code><br />
 <code>ORDER BY season ASC, bodypart ASC;</code></p>
-<ul>
-<li>How many goalkeeper saves were made in each season for each league to see where the goalkepers have performed the best or have faced the most competition from strikers</li>
-</ul>
+</div>
+<div id="how-many-goalkeeper-saves-were-made-in-each-season-for-each-league-to-see-where-the-goalkepers-have-performed-the-best-or-have-faced-the-most-competition-from-strikers" class="section level4">
+<h4>How many goalkeeper saves were made in each season for each league to see where the goalkepers have performed the best or have faced the most competition from strikers</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -613,9 +612,9 @@ $(document).ready(function () {
 <code>GROUP BY season, league, opponent</code><br />
 <code>ORDER BY season ASC, league ASC, COUNT(shot_outcome) DESC</code><br />
 <code>limit 30;</code></p>
-<ul>
-<li>Different situations in which the end result was a goal - Corner, Open Play, Set Piece</li>
-</ul>
+</div>
+<div id="different-situations-in-which-the-end-result-was-a-goal---corner-open-play-set-piece" class="section level4">
+<h4>Different situations in which the end result was a goal - Corner, Open Play, Set Piece</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -642,9 +641,9 @@ $(document).ready(function () {
 <code>FROM final_data</code><br />
 <code>GROUP BY season, actual_situation</code><br />
 <code>ORDER BY season ASC;</code></p>
-<ul>
-<li>Check the Free Kick and Penalty conversion data for Ronaldo and Messi to further add to their best player status</li>
-</ul>
+</div>
+<div id="check-the-free-kick-and-penalty-conversion-data-for-ronaldo-and-messi-to-further-add-to-their-best-player-status" class="section level4">
+<h4>Check the Free Kick and Penalty conversion data for Ronaldo and Messi to further add to their best player status</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -681,9 +680,9 @@ $(document).ready(function () {
 <code>AND set_piece NOT LIKE '%Other%'</code><br />
 <code>GROUP BY season, set_piece, player</code><br />
 <code>ORDER BY season, set_piece, player;</code></p>
-<ul>
-<li>Which league has the most number of long range attempts from outside the box and even from about 45 yards</li>
-</ul>
+</div>
+<div id="which-league-has-the-most-number-of-long-range-attempts-from-outside-the-box-and-even-from-about-45-yards" class="section level4">
+<h4>Which league has the most number of long range attempts from outside the box and even from about 45 yards</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -716,9 +715,9 @@ $(document).ready(function () {
 <code>AND (actual_location LIKE '%Long Range%' OR actual_location LIKE '%More than 35 Yards%' OR actual_location LIKE '%More than 40 Yards%')</code><br />
 <code>GROUP BY season, league, actual_location</code><br />
 <code>ORDER BY season, actual_location;</code></p>
-<ul>
-<li>Find players in each league that were Yellow Carded more than 10 times in each league</li>
-</ul>
+</div>
+<div id="find-players-in-each-league-that-were-yellow-carded-more-than-10-times-in-each-league" class="section level4">
+<h4>Find players in each league that were Yellow Carded more than 10 times in each league</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -743,9 +742,9 @@ $(document).ready(function () {
 <code>GROUP BY season, league, event_type_name, player</code><br />
 <code>HAVING COUNT(*) &gt;= 10</code><br />
 <code>ORDER BY season ASC, COUNT(*) DESC;</code></p>
-<ul>
-<li>Players with most Red Cards or Double Yellow Cards in the different leagues</li>
-</ul>
+</div>
+<div id="players-with-most-red-cards-or-double-yellow-cards-in-the-different-leagues" class="section level4">
+<h4>Players with most Red Cards or Double Yellow Cards in the different leagues</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -770,9 +769,9 @@ $(document).ready(function () {
 <code>GROUP BY season, league, event_type_name, player</code><br />
 <code>HAVING COUNT(*) &gt; 1</code><br />
 <code>ORDER BY season ASC, COUNT(*) DESC;</code></p>
-<ul>
-<li>Players that were fouled the most number of times in each season</li>
-</ul>
+</div>
+<div id="players-that-were-fouled-the-most-number-of-times-in-each-season" class="section level4">
+<h4>Players that were fouled the most number of times in each season</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -797,9 +796,9 @@ $(document).ready(function () {
 <code>GROUP BY season, league, player</code><br />
 <code>HAVING COUNT(*) &gt; 75</code><br />
 <code>ORDER BY season ASC, COUNT(*) DESC;</code></p>
-<ul>
-<li>Players that had the most number of offside decisions against them in each year in the different leagues</li>
-</ul>
+</div>
+<div id="players-that-had-the-most-number-of-offside-decisions-against-them-in-each-year-in-the-different-leagues" class="section level4">
+<h4>Players that had the most number of offside decisions against them in each year in the different leagues</h4>
 <p><code>WITH football_events_cte AS(</code><br />
 <code>SELECT * FROM football_events</code><br />
 <code>WHERE 1 = 1</code><br />
@@ -824,6 +823,7 @@ $(document).ready(function () {
 <code>GROUP BY season, league, player</code><br />
 <code>HAVING COUNT(*) &gt; 50</code><br />
 <code>ORDER BY season ASC, COUNT(*) DESC;</code></p>
+</div>
 </div>
 
 
